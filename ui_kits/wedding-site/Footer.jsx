@@ -10,7 +10,7 @@ function SiteFooter({go}){
     <a key={v} href={'#'+v} onClick={e=>{e.preventDefault();go(v);}} style={{fontFamily:'var(--font-body)',fontSize:19,color:'var(--villa-cream)',textDecoration:'none'}}>{l}</a>)}
    <a href="story.html" style={{fontFamily:'var(--font-body)',fontSize:19,color:'var(--villa-cream)',textDecoration:'none'}}>Our story</a>
   </nav>
-  <div style={{fontSize:15,color:'var(--garden-200)',marginTop:'var(--space-7)'}}>Registry &amp; RSVP coming with the invitation · #MatthewAndAlexis</div>
+  <div style={{fontSize:15,color:'var(--garden-200)',marginTop:'var(--space-7)'}}>Registry &amp; RSVP coming with the invitation · #AlexisAndMatthew</div>
  </footer>;
 }
 window.SiteFooter=SiteFooter;
