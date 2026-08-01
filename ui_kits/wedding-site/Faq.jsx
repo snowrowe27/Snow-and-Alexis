@@ -35,7 +35,7 @@ function Faq(){
    </Card>
   </div>
   <div style={{display:'flex',justifyContent:'center',marginTop:'var(--space-6)'}}>
-   <Illustration name="champagne-bottle" basePath={ILL} size={110} rotate={-5}/>
+   <span aria-hidden="true" style={{display:'block',width:110,height:138,transform:'rotate(-5deg)',background:'var(--villa-green)',WebkitMaskImage:'url('+ILL+'/champagne-bottle.png)',maskImage:'url('+ILL+'/champagne-bottle.png)',WebkitMaskRepeat:'no-repeat',maskRepeat:'no-repeat',WebkitMaskPosition:'center',maskPosition:'center',WebkitMaskSize:'contain',maskSize:'contain'}}/>
   </div>
  </Section>;
 }
