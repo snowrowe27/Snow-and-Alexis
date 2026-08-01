@@ -3,13 +3,12 @@ const QA=[
  ['DO I NEED TO RSVP NOW?','Nope. The card in your hands is the save-the-date. The formal invitation with the full schedule, meal choices and RSVP follows closer to the day.'],
  ['HOW DO I GET THERE?','Miami International (MIA) is about 20 minutes from the Grove. Fort Lauderdale (FLL) is often cheaper and roughly an hour out, worth a look if you’re coming from the Northeast.'],
  ['HOW DO I GET AROUND?',"Rideshare is easy and everywhere in Miami, so take one. You're going to want a drink, and nobody should be finding their car at midnight."],
- ["WHAT'S THE WEATHER LIKE IN APRIL?",'Sunny, mid 80s, breezy by dinner. Perfect, basically.'],
- ['IS THERE AN AFTERPARTY?',"The venue turns the lights on at 11:00 pm, and we have plans. We're just not telling you yet. Wear shoes you can keep going in."]];
+ ["WHAT'S THE WEATHER LIKE IN APRIL?",'Sunny, mid 80s, breezy by dinner. Perfect, basically.']];
 const HOTELS=[
  ['MAYFAIR HOUSE HOTEL & GARDEN','garden','our pick','Boutique and beautifully done, so it looks like the wedding. In the heart of the Grove, across from CocoWalk.','https://www.mayfairhousehotel.com'],
  ['COURTYARD BY MARRIOTT COCONUT GROVE','sky','the easy one','Kinder on the wallet and still walkable to the Grove restaurants and shops.','https://www.marriott.com']];
 function Faq(){
- return <Section id="faq" tone="cream">
+ return <Section id="faq" tone="cream" style={{paddingBottom:'var(--space-6)'}}>
   <div style={{maxWidth:'var(--container-text)',margin:'0 auto',textAlign:'center'}}>
    <ScriptHeading script="Good questions" eyebrow="Most of you are flying in" title="EVERYTHING WE KNOW SO FAR"/>
    <p style={{fontSize:'var(--text-lede)',marginTop:18}}>We're still working out the final details. More will land here when the formal invitations go out.</p>

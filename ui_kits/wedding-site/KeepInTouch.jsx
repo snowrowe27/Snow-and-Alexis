@@ -19,9 +19,9 @@ function KeepInTouch(){
    <div style={{padding:'var(--space-7)',display:'grid',gap:'var(--space-5)'}}>
     <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'var(--space-5)'}}>
      <Field label="Your name" htmlFor="kn" error={err}>
-      <Input id="kn" invalid={!!err} value={name} placeholder="Jamie Rivera" onChange={e=>setName(e.target.value)}/>
+      <Input id="kn" invalid={!!err} value={name} onChange={e=>setName(e.target.value)}/>
      </Field>
-     <Field label="Email" htmlFor="ke"><Input id="ke" type="email" placeholder="jamie@email.com"/></Field>
+     <Field label="Email" htmlFor="ke"><Input id="ke" type="email"/></Field>
     </div>
     <Field label="One song that gets you dancing" htmlFor="ks" hint="We're building the playlist early. No skips allowed.">
      <Input id="ks" placeholder="Artist / Song"/>
