@@ -30,8 +30,8 @@ function TheDay(){
     <div style={{textAlign:'center'}}><span style={{display:'inline-block',fontFamily:'var(--font-ui)',fontSize:18,fontWeight:500,letterSpacing:'var(--tracking-eyebrow)',textTransform:'uppercase',color:'var(--bougain-600)',background:'var(--cream-50)',border:'2px solid var(--bougainvillea)',borderRadius:'var(--radius-pill)',padding:'14px 34px'}}>How the evening goes</span></div>
     <div style={{marginTop:22}}>
      {RUN.map(([t,label,ill])=>
-      <div key={t} style={{display:'grid',gridTemplateColumns:'92px 1fr 84px',gap:20,alignItems:'center',padding:'18px 0',borderBottom:'1px solid var(--border-hairline)'}}>
-       <div style={{fontFamily:'var(--font-display)',fontSize:'1.25rem',color:'var(--olive)',letterSpacing:'.04em'}}>{t}</div>
+      <div key={t} style={{display:'grid',gridTemplateColumns:'132px 1fr 84px',gap:20,alignItems:'center',padding:'18px 28px',borderBottom:'1px solid var(--border-hairline)'}}>
+       <div style={{fontFamily:'var(--font-display)',fontSize:'clamp(1.875rem,3.4vw,2.5rem)',color:'var(--olive)',letterSpacing:'.04em'}}>{t}</div>
        <div style={{fontFamily:'var(--font-display)',fontSize:'clamp(1.6rem,3vw,2.125rem)',color:'var(--villa-green)',lineHeight:1.15}}>{label.toUpperCase()}</div>
        <Illustration name={ill} basePath={ILL} size={72} rotate={-3} style={{justifySelf:'end'}}/>
       </div>)}
