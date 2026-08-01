@@ -7,6 +7,15 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 <script src="../../_ds_bundle.js"></script>
+<!-- Supabase client (RSVP backend) -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js" crossorigin="anonymous"></script>
+<script>
+ // Public config. The publishable key is safe in the browser: the database
+ // only allows INSERT via row-level security, never reads, so nobody can see
+ // the guest list through the site.
+ window.SUPA_URL="https://byhdaxvpmggeptlvjnox.supabase.co";
+ window.SUPA_KEY="sb_publishable_00IEO03o_zyApMl3382Xlg_6f1yHZDa";
+</script>
 </head><body><div id="root"></div>
 <script type="text/babel" src="Shared.jsx"></script>
 <script type="text/babel" src="Hero.jsx"></script>
@@ -18,7 +27,7 @@
 <script type="text/babel" src="Footer.jsx"></script>
 <script type="text/babel">
 const { NavBar, Button } = window.LexiSnowDesignSystem_f12512;
-const NAV=[{value:'day',label:'THE DAY'},{value:'faq',label:'FAQ'}];
+const NAV=[{value:'day',label:'THE DAY'},{value:'keep',label:'RSVP'},{value:'faq',label:'FAQ'}];
 function App(){
  const [active,setActive]=React.useState('day');
  const go=(id)=>{const el=document.getElementById(id);if(el)window.scrollTo({top:el.offsetTop-64,behavior:'smooth'});};
@@ -30,7 +39,7 @@ function App(){
  },[]);
  return <React.Fragment>
   <NavBar brand="ALEXIS & MATTHEW" script="4 · 23 · 27" items={NAV} active={active} onNavigate={go}
-    action={<Button size="sm" onClick={()=>go('keep')}>GET UPDATES</Button>}/>
+    action={<Button size="sm" onClick={()=>go('keep')}>RSVP</Button>}/>
   <Hero go={go}/>
   <TheDay/>
   <Photos/>
