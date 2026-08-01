@@ -33,7 +33,7 @@ function TheDay(){
       <div key={t} style={{display:'grid',gridTemplateColumns:'132px 1fr 84px',gap:20,alignItems:'center',padding:'18px 28px',borderBottom:'1px solid var(--border-hairline)'}}>
        <div style={{fontFamily:'var(--font-display)',fontSize:'clamp(1.875rem,3.4vw,2.5rem)',color:'var(--olive)',letterSpacing:'.04em'}}>{t}</div>
        <div style={{fontFamily:'var(--font-display)',fontSize:'clamp(1.6rem,3vw,2.125rem)',color:'var(--villa-green)',lineHeight:1.15}}>{label.toUpperCase()}</div>
-       <Illustration name={ill} basePath={ILL} size={72} rotate={-3} style={{justifySelf:'end'}}/>
+       <span aria-hidden="true" style={{justifySelf:'end',width:72,height:72,display:'block',transform:'rotate(-3deg)',background:'var(--villa-green)',WebkitMaskImage:'url('+ILL+'/'+ill+'.png)',maskImage:'url('+ILL+'/'+ill+'.png)',WebkitMaskRepeat:'no-repeat',maskRepeat:'no-repeat',WebkitMaskPosition:'center',maskPosition:'center',WebkitMaskSize:'contain',maskSize:'contain'}}/>
       </div>)}
     </div>
     <div style={{marginTop:30,background:'var(--cream-50)',border:'1.5px solid var(--miami-orange)',borderRadius:'var(--radius-lg)',padding:'var(--space-5) var(--space-6)'}}><p style={{fontFamily:'var(--font-hand)',fontWeight:600,fontSize:'clamp(1.875rem,3.2vw,2.5rem)',lineHeight:1.25,color:'var(--orange-600)',textAlign:'center',margin:0}}>Villa Woodbine kicks us out at 11, rude. If you're still standing and want to keep the party going, stick with us. We know a place. That's all we're saying.</p></div>
