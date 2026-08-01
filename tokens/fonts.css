@@ -1,0 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@400;500;600&family=Caveat:wght@400;500;600;700&display=swap");
+@font-face{font-family:"Cabana Caps";src:url("../assets/fonts/CabanaService-CapsRegular.otf") format("opentype");font-weight:400;font-display:swap}
+@font-face{font-family:"Cabana Caps";src:url("../assets/fonts/CabanaService-CapsBold.otf") format("opentype");font-weight:700;font-display:swap}
+@font-face{font-family:"Cabana Caps Outline";src:url("../assets/fonts/CabanaService-CapsOutlineReg.otf") format("opentype");font-weight:400;font-display:swap}
+@font-face{font-family:"Cabana Caps Outline";src:url("../assets/fonts/CabanaService-CapsOutlineBold.otf") format("opentype");font-weight:700;font-display:swap}
+@font-face{font-family:"Cabana Script";src:url("../assets/fonts/CabanaService-Script.otf") format("opentype");font-weight:400;font-display:swap}
+@font-face{font-family:"Cabana Script Slanted";src:url("../assets/fonts/CabanaService-ScriptSlanted.otf") format("opentype");font-weight:400;font-display:swap}

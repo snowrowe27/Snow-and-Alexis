@@ -1,0 +1,45 @@
+:root{
+/* ================= BRAND PALETTE (canonical, client-specified) ================= */
+--villa-green:#0F5A34;      /* primary brand color, headings, icons */
+--villa-cream:#F7F2E8;      /* main background */
+--olive:#8FA438;            /* secondary accent, leaves */
+--butter-yellow:#F7E68A;    /* highlights, backgrounds */
+--miami-orange:#F47C2D;     /* buttons, callouts, illustrations */
+--bougainvillea:#E883A9;    /* florals, accents, hover states */
+--coral:#F46F67;            /* fun pops of color, illustrations */
+--sky-blue:#9BC9E5;         /* water, skies, section backgrounds */
+
+/* ================= RAMPS (tints/shades of the eight above) ================= */
+--cream-50:#FDFAF3;--cream-100:#F7F2E8;--cream-200:#F0E8D8;--cream-300:#E3D8C3;
+--ink-900:#1B211C;--ink-800:#2A302A;--ink-600:#59605A;--ink-400:#8B928C;--ink-200:#C7CCC6;
+
+--garden-800:#083D22;--garden-700:#0C4A2B;--garden-600:#0F5A34;--garden-400:#3E7E58;--garden-200:#A9C7B6;--garden-100:#E2EDE7;
+--sage-600:#6F8129;--sage-500:#8FA438;--sage-300:#B7C57E;--sage-100:#EAEFD6;
+--olive-600:#6F8129;--olive-500:#8FA438;--olive-300:#B7C57E;--olive-100:#EAEFD6;
+
+--orange-600:#D45F14;--orange-500:#F47C2D;--orange-300:#F8AC77;--orange-100:#FDE5D3;
+--terracotta-600:#D45F14;--terracotta-500:#F47C2D;--terracotta-300:#F8AC77;--terracotta-100:#FDE5D3;
+--coral-600:#DB4E45;--coral-500:#F46F67;--coral-300:#F9A9A3;--coral-100:#FDE2E0;
+--butter-600:#E0C64B;--butter-500:#F7E68A;--butter-300:#FAEFB4;--butter-100:#FDF8DE;
+--sky-600:#5E9FC6;--sky-500:#9BC9E5;--sky-300:#C4DFEF;--sky-100:#E8F3FA;
+--bougain-600:#C85B82;--bougain-500:#E883A9;--bougain-400:#F0AAC4;--bougain-200:#F9DDE7;
+
+/* ================= SEMANTIC ================= */
+--surface-page:var(--villa-cream);
+--surface-raised:var(--cream-50);
+--surface-card:#FDFAF3;
+--surface-inverse:var(--villa-green);
+--surface-accent:var(--butter-100);
+--text-body:var(--ink-800);
+--text-muted:var(--ink-600);
+--text-display:var(--villa-green);
+--text-on-dark:var(--villa-cream);
+--text-link:var(--villa-green);
+--text-link-hover:var(--miami-orange);
+--border-hairline:rgba(27,33,28,.16);
+--border-strong:var(--ink-800);
+--accent-primary:var(--miami-orange);
+--accent-secondary:var(--villa-green);
+--accent-highlight:var(--butter-yellow);
+--focus-ring:var(--sky-600);
+}
