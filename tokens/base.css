@@ -14,4 +14,6 @@ a:hover{color:var(--text-link-hover)}
  .ds-chand{width:72px!important;height:87px!important}
  /* NavBar has no room for links on phones — keep just the couple's name */
  header nav{display:none!important}
+ /* Drop the hero content below the corner chandeliers so they don't overlap */
+ #top{padding-top:108px!important}
 }
