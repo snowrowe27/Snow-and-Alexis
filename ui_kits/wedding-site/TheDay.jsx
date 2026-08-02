@@ -13,15 +13,20 @@ function TheDay(){
     <ScriptHeading script="The day" eyebrow="Friday · April 23, 2027" title="VILLA WOODBINE, COCONUT GROVE"/>
     <p style={{fontSize:'var(--text-lede)',marginTop:20}}>A garden wedding at a 1930s Mediterranean villa a block from Biscayne Bay. Ceremony and reception are both on site, so settle in for the night.</p>
    </div>
+   <style>{".placeCard{display:block;height:100%;transition:transform .18s ease}.placeCard:hover{transform:translateY(-3px)}.placeCard:hover .placeLink{text-decoration:underline;text-underline-offset:4px}"}</style>
    <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'var(--space-5)',marginTop:'var(--space-7)'}}>
-    {[['THE PLACE','garden','Villa Woodbine','Coconut Grove, Miami'],
+    {[['THE PLACE','garden','Villa Woodbine','Coconut Grove, Miami','https://www.villa-woodbine.com/'],
       ['THE TIMING','butter','Doors at 5:00 pm','Ceremony at 5:30 sharp'],
-      ['THE DRESS CODE','pink','Garden party formal','Be as extra as you want']].map(([k,tone,t,script])=>
-     <Card key={k} style={{textAlign:'center'}}>
+      ['THE DRESS CODE','pink','Garden party formal','Be as extra as you want']].map(([k,tone,t,script,url])=>{
+     const body=<Card style={{textAlign:'center',height:'100%'}}>
       <Badge tone={tone}>{k}</Badge>
-      <div style={{fontFamily:'var(--font-display)',fontSize:'1.625rem',marginTop:12,color:'var(--villa-green)',lineHeight:1.15,minHeight:'2.3em',display:'flex',alignItems:'center',justifyContent:'center'}}>{t.toUpperCase()}</div>
+      <div className={url?'placeLink':undefined} style={{fontFamily:'var(--font-display)',fontSize:'1.625rem',marginTop:12,color:'var(--villa-green)',lineHeight:1.15,minHeight:'2.3em',display:'flex',alignItems:'center',justifyContent:'center'}}>{t.toUpperCase()}</div>
       <div style={{fontFamily:'var(--font-script)',fontSize:26,color:'var(--bougainvillea)',lineHeight:1.2,marginTop:6,minHeight:'2.4em'}}>{script}</div>
-     </Card>)}
+     </Card>;
+     return url
+       ? <a key={k} className="placeCard" href={url} target="_blank" rel="noopener" style={{textDecoration:'none',color:'inherit'}}>{body}</a>
+       : <div key={k} style={{height:'100%'}}>{body}</div>;
+    })}
    </div>
   </Section>
 
