@@ -5,6 +5,12 @@ const StripeSurfaceKeep=NSKeep.StripeSurface||function({tone,direction,scale,rou
 };
 const { Button, Card, Field, Input, Textarea, Select, Dialog, StripeRule, Illustration } = NSKeep;
 
+// Flip to true when formal invitations go out. Save-the-date phase only
+// collects name, email and a song; RSVP mode adds attending / party size /
+// note / photo. (When re-opening RSVP, also restore the "RSVP" nav label in
+// index.html.)
+const RSVP_OPEN = false;
+
 // Lazily create one Supabase client for the page.
 function sbClient(){
  if(window.__sb) return window.__sb;
@@ -32,7 +38,7 @@ function KeepInTouch(){
   if(!name.trim()) e.name='We need a name to put on the list.';
   if(!email.trim()) e.email='Leave an email so we can reach you.';
   else if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.trim())) e.email='That email looks off — mind checking it?';
-  if(attending===null) e.attending='Let us know if you can make it.';
+  if(RSVP_OPEN && attending===null) e.attending='Let us know if you can make it.';
   setErrs(e);
   return Object.keys(e).length===0;
  }
@@ -45,7 +51,7 @@ function KeepInTouch(){
   setBusy(true);
   try{
    let photo_url=null;
-   if(photo){
+   if(RSVP_OPEN && photo){
     const clean=photo.name.replace(/[^a-zA-Z0-9._-]/g,'_');
     const path='rsvps/'+Date.now()+'_'+clean;
     const up=await sb.storage.from('wedding-photos').upload(path,photo,{upsert:false});
@@ -55,17 +61,17 @@ function KeepInTouch(){
    const row={
     name:name.trim(),
     email:email.trim(),
-    attending:attending,
-    guests:attending?parseInt(guests,10)||1:0,
+    attending: RSVP_OPEN ? attending : null,
+    guests: RSVP_OPEN ? (attending?parseInt(guests,10)||1:0) : 0,
     song:song.trim()||null,
-    message:message.trim()||null,
+    message: RSVP_OPEN ? (message.trim()||null) : null,
     photo_url:photo_url
    };
    const ins=await sb.from('wedding_rsvps').insert(row);
    if(ins.error) throw ins.error;
    setOpen(true);
   }catch(err){
-   setSendErr((err&&err.message)?err.message:'Something went wrong sending your RSVP. Please try again.');
+   setSendErr((err&&err.message)?err.message:'Something went wrong. Please try again.');
   }finally{
    setBusy(false);
   }
@@ -82,8 +88,12 @@ function KeepInTouch(){
 
  return <StripeSurfaceKeep as="section" tone="butter" id="keep" style={{padding:'var(--space-9) var(--gutter-page)',scrollMarginTop:70}}><div style={{maxWidth:'var(--container-max)',margin:'0 auto'}}>
   <div style={{maxWidth:'var(--container-text)',margin:'0 auto',textAlign:'center'}}>
-   <ScriptHeading script="Will you be there?" eyebrow="RSVP" title="LET US KNOW YOU'RE COMING"/>
-   <p style={{fontSize:'var(--text-lede)',marginTop:20}}>We can't wait to celebrate with you. Tell us whether you'll be joining, how many are in your party, and the one song guaranteed to get you on the dance floor. Leave a note if you'd like — or a favorite photo of us.</p>
+   {RSVP_OPEN
+     ? <ScriptHeading script="Will you be there?" eyebrow="RSVP" title="LET US KNOW YOU'RE COMING"/>
+     : <ScriptHeading script="Keep in touch" eyebrow="No RSVP needed yet" title="WE'LL EMAIL YOU WHEN THE INVITATION GOES OUT"/>}
+   <p style={{fontSize:'var(--text-lede)',marginTop:20}}>{RSVP_OPEN
+     ? "We can't wait to celebrate with you. Tell us whether you'll be joining, how many are in your party, and the one song guaranteed to get you on the dance floor. Leave a note if you'd like — or a favorite photo of us."
+     : "You've got the card, so we've got your address, and no RSVP is needed yet. Most of you are flying in, so leave an email and we'll write as we lock things in: room block, the formal invitation, the parts we haven't figured out. Tell us the one song that will get you on the dance floor while you're here."}</p>
   </div>
   <Card variant="feature" style={{maxWidth:760,margin:'var(--space-7) auto 0',padding:0,overflow:'hidden'}}>
    <StripeRule height={14}/>
@@ -97,14 +107,15 @@ function KeepInTouch(){
      </Field>
     </div>
 
-    <Field label="Will you be joining us?" htmlFor="ka" error={errs.attending}>
-     <div style={{display:'flex',gap:'var(--space-4)'}}>
-      {choice(true,'Joyfully accepts')}
-      {choice(false,'Regretfully declines')}
-     </div>
-    </Field>
+    {RSVP_OPEN &&
+     <Field label="Will you be joining us?" htmlFor="ka" error={errs.attending}>
+      <div style={{display:'flex',gap:'var(--space-4)'}}>
+       {choice(true,'Joyfully accepts')}
+       {choice(false,'Regretfully declines')}
+      </div>
+     </Field>}
 
-    {attending===true &&
+    {RSVP_OPEN && attending===true &&
      <Field label="How many in your party?" htmlFor="kg" hint="Including yourself.">
       <Select id="kg" value={guests} onChange={e=>setGuests(e.target.value)}
         options={[1,2,3,4,5,6,7,8].map(n=>({value:String(n),label:String(n)}))}/>
@@ -114,36 +125,40 @@ function KeepInTouch(){
      <Input id="ks" placeholder="Artist / Song" value={song} onChange={e=>setSong(e.target.value)}/>
     </Field>
 
-    <Field label="A note for us (optional)" htmlFor="km">
-     <Textarea id="km" rows={3} value={message} onChange={e=>setMessage(e.target.value)}
-       placeholder="Anything you'd like us to know."/>
-    </Field>
+    {RSVP_OPEN &&
+     <Field label="A note for us (optional)" htmlFor="km">
+      <Textarea id="km" rows={3} value={message} onChange={e=>setMessage(e.target.value)}
+        placeholder="Anything you'd like us to know."/>
+     </Field>}
 
-    <Field label="Share a photo (optional)" htmlFor="kp" hint="A favorite memory of us — or a selfie so we know who to look for.">
-     <div style={{display:'flex',alignItems:'center',gap:'var(--space-4)'}}>
-      <Button variant="sage" size="sm" onClick={()=>fileRef.current&&fileRef.current.click()}>Choose photo</Button>
-      <span style={{fontFamily:'var(--font-body)',fontSize:'var(--text-body-sm)',color:'var(--ink-500)'}}>
-       {photo?photo.name:'No file chosen'}</span>
-      <input ref={fileRef} id="kp" type="file" accept="image/*" style={{display:'none'}}
-        onChange={e=>setPhoto(e.target.files&&e.target.files[0]?e.target.files[0]:null)}/>
-     </div>
-    </Field>
+    {RSVP_OPEN &&
+     <Field label="Share a photo (optional)" htmlFor="kp" hint="A favorite memory of us — or a selfie so we know who to look for.">
+      <div style={{display:'flex',alignItems:'center',gap:'var(--space-4)'}}>
+       <Button variant="sage" size="sm" onClick={()=>fileRef.current&&fileRef.current.click()}>Choose photo</Button>
+       <span style={{fontFamily:'var(--font-body)',fontSize:'var(--text-body-sm)',color:'var(--ink-500)'}}>
+        {photo?photo.name:'No file chosen'}</span>
+       <input ref={fileRef} id="kp" type="file" accept="image/*" style={{display:'none'}}
+         onChange={e=>setPhoto(e.target.files&&e.target.files[0]?e.target.files[0]:null)}/>
+      </div>
+     </Field>}
 
     {sendErr && <div style={{fontFamily:'var(--font-ui)',fontSize:13,color:'var(--bougainvillea)',textAlign:'center'}}>{sendErr}</div>}
 
     <div style={{display:'flex',justifyContent:'center',marginTop:'var(--space-2)'}}>
-     <Button variant="primary" size="lg" onClick={submit} disabled={busy}>{busy?'SENDING…':'SEND RSVP'}</Button>
+     <Button variant="primary" size="lg" onClick={submit} disabled={busy}>{busy?'SENDING…':(RSVP_OPEN?'SEND RSVP':'KEEP ME POSTED')}</Button>
     </div>
    </div>
   </Card>
   <div style={{display:'flex',justifyContent:'center',marginTop:'var(--space-6)'}}>
    <Illustration name="couple-on-cake" basePath={ILL} size={140} rotate={-3}/>
   </div>
-  <Dialog open={open} title={attending?"YOU'RE ON THE LIST":"THANK YOU"} script={attending?"see you on the dance floor":"we'll miss you"} onClose={()=>setOpen(false)}
+  <Dialog open={open} title={RSVP_OPEN?(attending?"YOU'RE ON THE LIST":"THANK YOU"):"YOU'RE ON THE LIST"} script={RSVP_OPEN?(attending?"see you on the dance floor":"we'll miss you"):"see you in the garden"} onClose={()=>setOpen(false)}
    footer={<Button variant="butter" onClick={()=>setOpen(false)}>LOVELY</Button>}>
-   {attending
-     ?<span>Thanks, {name||'friend'}. Your RSVP is saved{song?', and your song is going straight on the playlist':''}. We'll be in touch as we lock things in.</span>
-     :<span>Thanks for letting us know, {name||'friend'}. We'll miss you — but we're grateful you told us.</span>}
+   {RSVP_OPEN
+     ? (attending
+         ?<span>Thanks, {name||'friend'}. Your RSVP is saved{song?', and your song is going straight on the playlist':''}. We'll be in touch as we lock things in.</span>
+         :<span>Thanks for letting us know, {name||'friend'}. We'll miss you — but we're grateful you told us.</span>)
+     : <span>Thanks, {name||'friend'}. We'll write when the invitation goes out{song?', and your song is going straight on the playlist':''}.</span>}
   </Dialog>
  </div></StripeSurfaceKeep>;
 }

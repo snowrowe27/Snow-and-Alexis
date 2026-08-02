@@ -27,7 +27,7 @@
 <script type="text/babel" src="Footer.jsx"></script>
 <script type="text/babel">
 const { NavBar, Button } = window.LexiSnowDesignSystem_f12512;
-const NAV=[{value:'day',label:'THE DAY'},{value:'keep',label:'RSVP'},{value:'faq',label:'FAQ'}];
+const NAV=[{value:'day',label:'THE DAY'},{value:'keep',label:'GET UPDATES'},{value:'faq',label:'FAQ'}];
 function App(){
  const [active,setActive]=React.useState('day');
  const go=(id)=>{const el=document.getElementById(id);if(el)window.scrollTo({top:el.offsetTop-64,behavior:'smooth'});};
@@ -39,7 +39,7 @@ function App(){
  },[]);
  return <React.Fragment>
   <NavBar brand="ALEXIS & MATTHEW" script="4 · 23 · 27" items={NAV} active={active} onNavigate={go}
-    action={<Button size="sm" onClick={()=>go('keep')}>RSVP</Button>}/>
+    action={<Button size="sm" onClick={()=>go('keep')}>GET UPDATES</Button>}/>
   <Hero go={go}/>
   <TheDay/>
   <Photos/>
