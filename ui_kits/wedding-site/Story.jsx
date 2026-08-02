@@ -1,6 +1,6 @@
 function Story(){
  return <Section id="story" tone="cream">
-  <div style={{display:'grid',gridTemplateColumns:'.9fr 1.1fr',gap:'var(--space-8)',alignItems:'center'}}>
+  <div className="ds-grid2" style={{display:'grid',gridTemplateColumns:'.9fr 1.1fr',gap:'var(--space-8)',alignItems:'center'}}>
    <Photo name="gondola" alt="Matthew and Alexis on a Venice canal ledge, rose petals at their feet, ring in the air" ratio="2 / 3"/>
    <div style={{maxWidth:'58ch'}}>
     <ScriptHeading align="left" script="Our story" eyebrow="It started in Miami" title="FROM FAST FRIENDS TO FOREVER"/>

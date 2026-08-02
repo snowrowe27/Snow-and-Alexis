@@ -98,7 +98,7 @@ function KeepInTouch(){
   <Card variant="feature" style={{maxWidth:760,margin:'var(--space-7) auto 0',padding:0,overflow:'hidden'}}>
    <StripeRule height={14}/>
    <div style={{padding:'var(--space-7)',display:'grid',gap:'var(--space-5)'}}>
-    <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'var(--space-5)'}}>
+    <div className="ds-grid2" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'var(--space-5)'}}>
      <Field label="Your name" htmlFor="kn" error={errs.name}>
       <Input id="kn" invalid={!!errs.name} value={name} onChange={e=>setName(e.target.value)}/>
      </Field>

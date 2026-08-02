@@ -4,3 +4,14 @@ a{color:var(--text-link);text-decoration-thickness:1px;text-underline-offset:3px
 a:hover{color:var(--text-link-hover)}
 ::selection{background:var(--butter-300)}
 :focus-visible{outline:2px solid var(--focus-ring);outline-offset:3px}
+
+/* ===== Phone layout: stack multi-column grids, shrink dense rows ===== */
+@media (max-width:640px){
+ .ds-grid3,.ds-grid2{grid-template-columns:1fr!important}
+ .ds-runrow{grid-template-columns:70px 1fr 50px!important;gap:14px!important}
+ .ds-runtime{font-size:1.55rem!important}
+ .ds-runicon{width:50px!important;height:50px!important}
+ .ds-chand{width:72px!important;height:87px!important}
+ /* NavBar has no room for links on phones — keep just the couple's name */
+ header nav{display:none!important}
+}

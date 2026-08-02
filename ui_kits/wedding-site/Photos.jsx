@@ -3,7 +3,7 @@ function Photos(){
   <div style={{maxWidth:'var(--container-text)',margin:'0 auto',textAlign:'center'}}>
    <ScriptHeading script="Us, lately" eyebrow="A few favorites" title="PHOTOS"/>
   </div>
-  <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'var(--space-5)',marginTop:'var(--space-7)'}}>
+  <div className="ds-grid3" style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'var(--space-5)',marginTop:'var(--space-7)'}}>
    <Photo name="gondola-kiss" alt="Matthew kissing Alexis's forehead in a gondola under the Bridge of Sighs in Venice" ratio="4 / 5"/>
    <Photo name="terrace" alt="Alexis and Matthew on a terrace in Todi" ratio="4 / 5"/>
    <Photo name="dancing" alt="Alexis and Matthew out dancing" ratio="4 / 5"/>

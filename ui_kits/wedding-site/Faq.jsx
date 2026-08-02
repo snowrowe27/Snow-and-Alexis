@@ -22,7 +22,7 @@ function Faq(){
    <Card>
     <div style={{fontFamily:'var(--font-display)',fontSize:'1.375rem',color:'var(--villa-green)'}}>WHERE SHOULD WE STAY?</div>
     <p style={{fontSize:17,color:'var(--ink-600)',margin:'8px 0 0'}}>Coconut Grove, if you can: walkable, leafy, minutes from the venue. Two we'd pick, both about five minutes from Villa Woodbine.</p>
-    <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'var(--space-4)',marginTop:'var(--space-5)'}}>
+    <div className="ds-grid2" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'var(--space-4)',marginTop:'var(--space-5)'}}>
      {HOTELS.map(([n,tone,tag,desc,url])=>
       <div key={n} style={{border:'var(--border-ink)',borderRadius:'var(--radius-md)',padding:'var(--space-5)',display:'flex',flexDirection:'column',gap:8,alignItems:'flex-start'}}>
        <Badge tone={tone}>{tag}</Badge>

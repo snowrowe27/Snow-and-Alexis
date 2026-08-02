@@ -14,7 +14,7 @@ function TheDay(){
     <p style={{fontSize:'var(--text-lede)',marginTop:20}}>A garden wedding at a 1930s Mediterranean villa a block from Biscayne Bay. Ceremony and reception are both on site, so settle in for the night.</p>
    </div>
    <style>{".placeCard{display:block;height:100%;transition:transform .18s ease}.placeCard:hover{transform:translateY(-3px)}.placeCard:hover .placeLink{text-decoration:underline;text-underline-offset:4px}"}</style>
-   <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'var(--space-5)',marginTop:'var(--space-7)'}}>
+   <div className="ds-grid3" style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'var(--space-5)',marginTop:'var(--space-7)'}}>
     {[['THE PLACE','garden','Villa Woodbine','Coconut Grove, Miami','https://www.villa-woodbine.com/'],
       ['THE TIMING','butter','Doors at 5:00 pm','Ceremony at 5:30 sharp'],
       ['THE DRESS CODE','pink','Garden party formal','Be as extra as you want']].map(([k,tone,t,script,url])=>{
@@ -35,10 +35,10 @@ function TheDay(){
     <div style={{textAlign:'center'}}><span style={{display:'inline-block',fontFamily:'var(--font-ui)',fontSize:18,fontWeight:500,letterSpacing:'var(--tracking-eyebrow)',textTransform:'uppercase',color:'var(--bougain-600)',background:'var(--cream-50)',border:'2px solid var(--bougainvillea)',borderRadius:'var(--radius-pill)',padding:'14px 34px'}}>How the evening goes</span></div>
     <div style={{marginTop:22}}>
      {RUN.map(([t,label,ill])=>
-      <div key={t} style={{display:'grid',gridTemplateColumns:'132px 1fr 84px',gap:20,alignItems:'center',padding:'18px 28px',borderBottom:'1px solid var(--border-hairline)'}}>
-       <div style={{fontFamily:'var(--font-display)',fontSize:'clamp(1.875rem,3.4vw,2.5rem)',color:'var(--olive)',letterSpacing:'.04em'}}>{t}</div>
+      <div key={t} className="ds-runrow" style={{display:'grid',gridTemplateColumns:'132px 1fr 84px',gap:20,alignItems:'center',padding:'18px 28px',borderBottom:'1px solid var(--border-hairline)'}}>
+       <div className="ds-runtime" style={{fontFamily:'var(--font-display)',fontSize:'clamp(1.875rem,3.4vw,2.5rem)',color:'var(--olive)',letterSpacing:'.04em'}}>{t}</div>
        <div style={{fontFamily:'var(--font-display)',fontSize:'clamp(1.6rem,3vw,2.125rem)',color:'var(--villa-green)',lineHeight:1.15}}>{label.toUpperCase()}</div>
-       <span aria-hidden="true" style={{justifySelf:'end',width:72,height:72,display:'block',transform:'rotate(-3deg)',background:'var(--villa-green)',WebkitMaskImage:'url('+ILL+'/'+ill+'.png)',maskImage:'url('+ILL+'/'+ill+'.png)',WebkitMaskRepeat:'no-repeat',maskRepeat:'no-repeat',WebkitMaskPosition:'center',maskPosition:'center',WebkitMaskSize:'contain',maskSize:'contain'}}/>
+       <span aria-hidden="true" className="ds-runicon" style={{justifySelf:'end',width:72,height:72,display:'block',transform:'rotate(-3deg)',background:'var(--villa-green)',WebkitMaskImage:'url('+ILL+'/'+ill+'.png)',maskImage:'url('+ILL+'/'+ill+'.png)',WebkitMaskRepeat:'no-repeat',maskRepeat:'no-repeat',WebkitMaskPosition:'center',maskPosition:'center',WebkitMaskSize:'contain',maskSize:'contain'}}/>
       </div>)}
     </div>
     <div style={{marginTop:30,background:'var(--cream-50)',border:'1.5px solid var(--miami-orange)',borderRadius:'var(--radius-lg)',padding:'var(--space-5) var(--space-6)'}}><p style={{fontFamily:'var(--font-hand)',fontWeight:600,fontSize:'clamp(1.875rem,3.2vw,2.5rem)',lineHeight:1.25,color:'var(--orange-600)',textAlign:'center',margin:0}}>Villa Woodbine kicks us out at 11, rude. If you're still standing and want to keep the party going, stick with us. We know a place. That's all we're saying.</p></div>
