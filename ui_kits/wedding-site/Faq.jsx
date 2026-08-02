@@ -21,8 +21,8 @@ function Faq(){
     </Card>)}
    <Card>
     <div style={{fontFamily:'var(--font-display)',fontSize:'1.375rem',color:'var(--villa-green)'}}>WHERE SHOULD WE STAY?</div>
-    <p style={{fontSize:17,color:'var(--ink-600)',margin:'8px 0 0'}}>For the true Miami experience, stay on <strong style={{color:'var(--villa-green)'}}>Miami Beach</strong>. We're working on a room block now — and if you go this route, we're planning a shuttle to the villa from our block hotel. South Beach is walkable, so you can hop on wherever you land.</p>
-    <p style={{fontSize:17,color:'var(--ink-600)',margin:'var(--space-5) 0 0',fontWeight:600}}>Or, if you'd like to stay near the venue, here are two great options — both about five minutes from Villa Woodbine:</p>
+    <p style={{fontSize:17,color:'var(--ink-600)',margin:'8px 0 0'}}>For the true Miami experience, stay on <strong style={{color:'var(--villa-green)'}}>Miami Beach</strong>. We're working on a room block now, and if you go this route, we're planning a shuttle to the villa from our block hotel. South Beach is walkable, so you can hop on wherever you land.</p>
+    <p style={{fontSize:17,color:'var(--ink-600)',margin:'var(--space-5) 0 0',fontWeight:600}}>Or, if you'd like to stay near the venue, here are two great options:</p>
     <div className="ds-grid2" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'var(--space-4)',marginTop:'var(--space-4)'}}>
      {HOTELS.map(([n,tone,tag,desc,url])=>
       <div key={n} style={{border:'var(--border-ink)',borderRadius:'var(--radius-md)',padding:'var(--space-5)',display:'flex',flexDirection:'column',gap:8,alignItems:'flex-start'}}>

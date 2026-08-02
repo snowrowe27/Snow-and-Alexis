@@ -37,7 +37,7 @@ function KeepInTouch(){
   const e={};
   if(!name.trim()) e.name='We need a name to put on the list.';
   if(!email.trim()) e.email='Leave an email so we can reach you.';
-  else if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.trim())) e.email='That email looks off — mind checking it?';
+  else if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.trim())) e.email='That email looks off. Mind checking it?';
   if(RSVP_OPEN && attending===null) e.attending='Let us know if you can make it.';
   setErrs(e);
   return Object.keys(e).length===0;
@@ -92,7 +92,7 @@ function KeepInTouch(){
      ? <ScriptHeading script="Will you be there?" eyebrow="RSVP" title="LET US KNOW YOU'RE COMING"/>
      : <ScriptHeading script="Keep in touch" eyebrow="No RSVP needed yet" title="WE'LL EMAIL YOU WHEN THE INVITATION GOES OUT"/>}
    <p style={{fontSize:'var(--text-lede)',marginTop:20}}>{RSVP_OPEN
-     ? "We can't wait to celebrate with you. Tell us whether you'll be joining, how many are in your party, and the one song guaranteed to get you on the dance floor. Leave a note if you'd like — or a favorite photo of us."
+     ? "We can't wait to celebrate with you. Tell us whether you'll be joining, how many are in your party, and the one song guaranteed to get you on the dance floor. Leave a note if you'd like, or a favorite photo of us."
      : "You've got the card, so we've got your address, and no RSVP is needed yet. Most of you are flying in, so leave an email and we'll write as we lock things in: room block, the formal invitation, the parts we haven't figured out. Tell us the one song that will get you on the dance floor while you're here."}</p>
   </div>
   <Card variant="feature" style={{maxWidth:760,margin:'var(--space-7) auto 0',padding:0,overflow:'hidden'}}>
@@ -132,7 +132,7 @@ function KeepInTouch(){
      </Field>}
 
     {RSVP_OPEN &&
-     <Field label="Share a photo (optional)" htmlFor="kp" hint="A favorite memory of us — or a selfie so we know who to look for.">
+     <Field label="Share a photo (optional)" htmlFor="kp" hint="A favorite memory of us, or a selfie so we know who to look for.">
       <div style={{display:'flex',alignItems:'center',gap:'var(--space-4)'}}>
        <Button variant="sage" size="sm" onClick={()=>fileRef.current&&fileRef.current.click()}>Choose photo</Button>
        <span style={{fontFamily:'var(--font-body)',fontSize:'var(--text-body-sm)',color:'var(--ink-500)'}}>
@@ -157,7 +157,7 @@ function KeepInTouch(){
    {RSVP_OPEN
      ? (attending
          ?<span>Thanks, {name||'friend'}. Your RSVP is saved{song?', and your song is going straight on the playlist':''}. We'll be in touch as we lock things in.</span>
-         :<span>Thanks for letting us know, {name||'friend'}. We'll miss you — but we're grateful you told us.</span>)
+         :<span>Thanks for letting us know, {name||'friend'}. We'll miss you, but we're grateful you told us.</span>)
      : <span>Thanks, {name||'friend'}. We'll write when the invitation goes out{song?', and your song is going straight on the playlist':''}.</span>}
   </Dialog>
  </div></StripeSurfaceKeep>;
