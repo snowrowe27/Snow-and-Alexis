@@ -5,8 +5,8 @@ const QA=[
  ['HOW DO I GET AROUND?',"Rideshare is easy and everywhere in Miami, so take one. You're going to want a drink, and nobody should be finding their car at midnight."],
  ["WHAT'S THE WEATHER LIKE IN APRIL?",'Sunny, mid 80s, breezy by dinner. Perfect, basically.']];
 const HOTELS=[
- ['MAYFAIR HOUSE HOTEL & GARDEN','garden','our pick','Our favorite for its boutique feel, beautiful design, and central Grove location.','https://www.mayfairhousehotel.com'],
- ['COURTYARD BY MARRIOTT COCONUT GROVE','sky','the easy one','Kinder on the wallet and still walkable to the Grove restaurants and shops.','https://www.marriott.com']];
+ ['MAYFAIR HOUSE HOTEL & GARDEN','garden','our pick','Our favorite for its boutique feel, beautiful design, and central Grove location.','https://www.mayfairhousemiami.com/'],
+ ['COURTYARD BY MARRIOTT COCONUT GROVE','sky','the easy one','Kinder on the wallet and still walkable to the Grove restaurants and shops.','https://www.marriott.com/en-us/hotels/miagv-courtyard-miami-coconut-grove/overview/']];
 function Faq(){
  return <Section id="faq" tone="cream" style={{paddingBottom:'var(--space-6)'}}>
   <div style={{maxWidth:'var(--container-text)',margin:'0 auto',textAlign:'center'}}>
