@@ -150,7 +150,7 @@ function KeepInTouch(){
    </div>
   </Card>
   <div style={{display:'flex',justifyContent:'center',marginTop:'var(--space-6)'}}>
-   <Illustration name="couple-on-cake" basePath={ILL} size={140} rotate={-3}/>
+   <Illustration name="couple-on-cake" basePath={ILL} size={140} rotate={0}/>
   </div>
   <Dialog open={open} title={RSVP_OPEN?(attending?"YOU'RE ON THE LIST":"THANK YOU"):"YOU'RE ON THE LIST"} script={RSVP_OPEN?(attending?"see you on the dance floor":"we'll miss you"):"see you in the garden"} onClose={()=>setOpen(false)}
    footer={<Button variant="butter" onClick={()=>setOpen(false)}>LOVELY</Button>}>

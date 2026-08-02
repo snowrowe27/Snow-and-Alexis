@@ -1,6 +1,6 @@
 const { Button, Illustration } = window.LexiSnowDesignSystem_f12512;
 function StoryCta(){
- return <Section tone="card" style={{paddingTop:'var(--space-8)',paddingBottom:'var(--space-8)'}}>
+ return <Section tone="card" style={{paddingTop:'var(--space-5)',paddingBottom:'var(--space-8)'}}>
   <div style={{display:'flex',alignItems:'center',justifyContent:'center',gap:'var(--space-6)',flexWrap:'wrap',textAlign:'center'}}>
    <Illustration name="cupid" basePath={ILL} size={100} rotate={-6}/>
    <div>
