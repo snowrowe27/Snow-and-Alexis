@@ -11,7 +11,7 @@ function TheDay(){
    <div style={{maxWidth:'var(--container-text)',margin:'0 auto',textAlign:'center'}}>
     <Illustration name="villa-woodbine" basePath={ILL} size={430} rotate={0} style={{margin:'0 auto 4px',maxWidth:'100%'}}/>
     <ScriptHeading script="The day" eyebrow="Friday · April 23, 2027" title="VILLA WOODBINE, COCONUT GROVE"/>
-    <p style={{fontSize:'var(--text-lede)',marginTop:20}}>A garden wedding at a 1930s Mediterranean villa a block from Biscayne Bay. Ceremony and reception are both on site, so settle in for the night.</p>
+    <p style={{fontSize:'var(--text-lede)',marginTop:20}}>A garden wedding at a 1930s Mediterranean villa, a block from Biscayne Bay. Ceremony and reception are both on site, so settle in for the night.</p>
    </div>
    <style>{".placeCard{display:block;height:100%;transition:transform .18s ease}.placeCard:hover{transform:translateY(-3px)}.placeCard:hover .placeLink{text-decoration:underline;text-underline-offset:4px}"}</style>
    <div className="ds-grid3" style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'var(--space-5)',marginTop:'var(--space-7)'}}>
