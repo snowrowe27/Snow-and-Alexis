@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    { "source": "/", "destination": "/ui_kits/wedding-site/index.html" },
+    { "source": "/index.html", "destination": "/ui_kits/wedding-site/index.html" },
+    { "source": "/story.html", "destination": "/ui_kits/wedding-site/story.html" },
+    { "source": "/:name.jsx", "destination": "/ui_kits/wedding-site/:name.jsx" }
+  ]
+}
