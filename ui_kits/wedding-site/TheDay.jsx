@@ -17,7 +17,7 @@ function TheDay(){
    <div className="ds-grid3" style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'var(--space-5)',marginTop:'var(--space-7)'}}>
     {[['THE PLACE','garden','Villa Woodbine','Coconut Grove, Miami','https://www.villa-woodbine.com/'],
       ['THE TIMING','butter','Doors at 5:00 pm','Ceremony at 5:30 sharp'],
-      ['THE DRESS CODE','pink','Garden party formal','Be as extra as you want']].map(([k,tone,t,script,url])=>{
+      ['THE DRESS CODE','pink','Garden party formal','Be as extra as you want','https://pin.it/4PigzV81V']].map(([k,tone,t,script,url])=>{
      const body=<Card style={{textAlign:'center',height:'100%'}}>
       <Badge tone={tone}>{k}</Badge>
       <div className={url?'placeLink':undefined} style={{fontFamily:'var(--font-display)',fontSize:'1.625rem',marginTop:12,color:'var(--villa-green)',lineHeight:1.15,minHeight:'2.3em',display:'flex',alignItems:'center',justifyContent:'center'}}>{t.toUpperCase()}</div>
