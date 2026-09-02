@@ -21,8 +21,12 @@ function Faq(){
     </Card>)}
    <Card>
     <div style={{fontFamily:'var(--font-display)',fontSize:'1.375rem',color:'var(--villa-green)'}}>WHERE SHOULD WE STAY?</div>
-    <p style={{fontSize:17,color:'var(--ink-600)',margin:'8px 0 0'}}>For the true Miami experience, stay on <strong style={{color:'var(--villa-green)'}}>Miami Beach</strong>. We're working on a room block now, and if you go this route, we're planning a shuttle to the villa from our block hotel. The beach hotels are all close by, so getting to the shuttle will be easy wherever you stay.</p>
-    <p style={{fontSize:17,color:'var(--ink-600)',margin:'var(--space-5) 0 0',fontWeight:600}}>Or, if you'd like to stay near the venue, here are two great options:</p>
+    <div style={{marginTop:'var(--space-5)',background:'var(--sky-100)',border:'1.5px solid var(--sky-300)',borderRadius:'var(--radius-md)',padding:'var(--space-5) var(--space-6)'}}>
+     <span style={{display:'inline-block',fontFamily:'var(--font-ui)',fontSize:12,fontWeight:600,letterSpacing:'.16em',textTransform:'uppercase',color:'var(--sky-600)',background:'var(--cream-50)',border:'1px solid var(--sky-300)',borderRadius:'var(--radius-pill)',padding:'5px 14px'}}>Where most of you will stay</span>
+     <div style={{fontFamily:'var(--font-display)',fontSize:'1.75rem',color:'var(--villa-green)',marginTop:12,lineHeight:1.1}}>MIAMI BEACH</div>
+     <p style={{fontSize:17,color:'var(--ink-600)',margin:'10px 0 0'}}>For the true Miami experience, stay on the beach. We're working on a room block now, and if you go this route, we're planning a shuttle to the villa from our block hotel. The beach hotels are all close by, so getting to the shuttle will be easy wherever you stay.</p>
+    </div>
+    <p style={{fontSize:17,color:'var(--ink-600)',margin:'var(--space-6) 0 0',fontWeight:600}}>Or, if you'd like to stay near the venue, here are two great options:</p>
     <div className="ds-grid2" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'var(--space-4)',marginTop:'var(--space-4)'}}>
      {HOTELS.map(([n,tone,tag,desc,url])=>
       <div key={n} style={{border:'var(--border-ink)',borderRadius:'var(--radius-md)',padding:'var(--space-5)',display:'flex',flexDirection:'column',gap:8,alignItems:'flex-start'}}>
