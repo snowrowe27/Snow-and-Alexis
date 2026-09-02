@@ -15,13 +15,14 @@ function TheDay(){
    </div>
    <style>{".placeCard{display:block;height:100%;transition:transform .18s ease}.placeCard:hover{transform:translateY(-3px)}.placeCard:hover .placeLink{text-decoration:underline;text-underline-offset:4px}"}</style>
    <div className="ds-grid3" style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'var(--space-5)',marginTop:'var(--space-7)'}}>
-    {[['THE PLACE','garden','Villa Woodbine','Coconut Grove, Miami','https://www.villa-woodbine.com/'],
+    {[['THE PLACE','garden','Villa Woodbine','Coconut Grove, Miami','https://www.villa-woodbine.com/','Visit the venue'],
       ['THE TIMING','butter','Doors at 5:00 pm','Ceremony at 5:30 sharp'],
-      ['THE DRESS CODE','pink','Garden party formal','Be as extra as you want','https://pin.it/4PigzV81V']].map(([k,tone,t,script,url])=>{
+      ['THE DRESS CODE','pink','Garden party formal','Be as extra as you want','https://pin.it/4PigzV81V','See our inspo']].map(([k,tone,t,script,url,cue])=>{
      const body=<Card style={{textAlign:'center',height:'100%'}}>
       <Badge tone={tone}>{k}</Badge>
       <div className={url?'placeLink':undefined} style={{fontFamily:'var(--font-display)',fontSize:'1.625rem',marginTop:12,color:'var(--villa-green)',lineHeight:1.15,minHeight:'2.3em',display:'flex',alignItems:'center',justifyContent:'center'}}>{t.toUpperCase()}</div>
       <div style={{fontFamily:'var(--font-script)',fontSize:26,color:'var(--bougainvillea)',lineHeight:1.2,marginTop:6,minHeight:'2.4em'}}>{script}</div>
+      {url&&<div style={{fontFamily:'var(--font-ui)',fontSize:12,letterSpacing:'.14em',textTransform:'uppercase',color:'var(--olive)',marginTop:'var(--space-4)'}}>{cue} <span aria-hidden="true">↗</span></div>}
      </Card>;
      return url
        ? <a key={k} className="placeCard" href={url} target="_blank" rel="noopener" style={{textDecoration:'none',color:'inherit'}}>{body}</a>
