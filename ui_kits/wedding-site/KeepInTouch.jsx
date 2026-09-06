@@ -71,7 +71,10 @@ function KeepInTouch(){
    if(ins.error) throw ins.error;
    setOpen(true);
   }catch(err){
-   setSendErr((err&&err.message)?err.message:'Something went wrong. Please try again.');
+   // Raw Postgres/storage errors are meaningless to a guest. Keep them in the
+   // console for us and show something human on the page.
+   console.error('Wedding form submit failed:',err);
+   setSendErr("We couldn't save that just now. Please try again in a moment \u2014 or text us and we'll add you by hand.");
   }finally{
    setBusy(false);
   }
