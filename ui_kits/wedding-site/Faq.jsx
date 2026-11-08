@@ -5,13 +5,13 @@ const QA=[
  ['HOW DO I GET AROUND?',"Rideshare is easy and everywhere in Miami, so take one. You're going to want a drink, and nobody should be finding their car at midnight."],
  ["WHAT'S THE WEATHER LIKE IN APRIL?",'Sunny, mid 80s, breezy by dinner. Perfect, basically.']];
 const BEACH=[
- ['LOEWS MIAMI BEACH HOTEL','sky','the splurge','Miami Beach · South Beach, on the sand','Big, polished and freshly renovated, directly on the beach and walkable to Lincoln Road. The best-reviewed of the splurges, and our pick if you want the full resort.','https://www.loewshotels.com/miami-beach'],
- ['FONTAINEBLEAU MIAMI BEACH','garden','the icon','Miami Beach · Mid-Beach, LIV downstairs','The iconic one. Pools for days, and LIV is literally in the building when the night refuses to end. Pricey and a little fee-happy, but you came to Miami.','https://www.fontainebleau.com/'],
- ['FREEHAND MIAMI','sky','the fun one','Miami Beach · South Beach, home of Broken Shaker','Leafy, laid-back and effortlessly cool, and the Broken Shaker in the courtyard is one of the best bars in the country. Big personality, great value.','https://freehandhotels.com/miami/'],
- ['THE TONY HOTEL SOUTH BEACH','garden','budget-friendly','Miami Beach · South Beach, Art Deco charm','The wallet-friendly pick: a cute Art Deco boutique with a rooftop pool, steps from the beach, and it reviews great for the price.','https://www.thetonyhotel.com/']];
+ ['LOEWS MIAMI BEACH HOTEL','sky','the splurge','Miami Beach · South Beach, on the sand','Big, polished and freshly renovated, right on the beach and a short walk to Lincoln Road.','https://www.loewshotels.com/miami-beach'],
+ ['FONTAINEBLEAU MIAMI BEACH','garden','the icon','Miami Beach · Mid-Beach, LIV downstairs','The classic Miami Beach resort, with pools for days and LIV nightclub right in the building.','https://www.fontainebleau.com/'],
+ ['FREEHAND MIAMI','sky','the fun one','Miami Beach · South Beach, home of Broken Shaker','Leafy and laid-back, with the Broken Shaker, one of the best bars in the country, right in the courtyard. Big personality, great value.','https://freehandhotels.com/miami/'],
+ ['THE TONY HOTEL SOUTH BEACH','garden','budget-friendly','Miami Beach · South Beach, Art Deco charm','A cute Art Deco boutique hotel with a rooftop pool, steps from the beach. Great reviews for the price.','https://www.thetonyhotel.com/']];
 const HOTELS=[
  ['MAYFAIR HOUSE HOTEL & GARDEN','garden','our pick','Our favorite for its boutique feel, beautiful design, and central Grove location.','https://www.mayfairhousemiami.com/'],
- ['COURTYARD BY MARRIOTT COCONUT GROVE','sky','the easy one','Kinder on the wallet and still walkable to the Grove restaurants and shops.','https://www.marriott.com/en-us/hotels/miagv-courtyard-miami-coconut-grove/overview/']];
+ ['COURTYARD BY MARRIOTT COCONUT GROVE','sky','the easy one','A more affordable option, still walkable to the Grove restaurants and shops.','https://www.marriott.com/en-us/hotels/miagv-courtyard-miami-coconut-grove/overview/']];
 function Faq(){
  return <Section id="faq" tone="cream" style={{paddingBottom:'var(--space-6)'}}>
   <div style={{maxWidth:'var(--container-text)',margin:'0 auto',textAlign:'center'}}>
