@@ -96,7 +96,7 @@ function KeepInTouch(){
      : <ScriptHeading script="Keep in touch" eyebrow="No RSVP needed yet" title="WE'LL EMAIL YOU WHEN THE INVITATION GOES OUT"/>}
    <p style={{fontSize:'var(--text-lede)',marginTop:20}}>{RSVP_OPEN
      ? "We can't wait to celebrate with you. Tell us whether you'll be joining, how many are in your party, and the one song guaranteed to get you on the dance floor. Leave a note if you'd like, or a favorite photo of us."
-     : "You've got the card, so we've got your address, and no RSVP is needed yet. Most of you are flying in, so leave an email and we'll write as we lock things in: room block, the formal invitation, the parts we haven't figured out. Tell us the one song that will get you on the dance floor while you're here."}</p>
+     : "You've got the card, so we've got your address, and no RSVP is needed yet. Most of you are flying in, so leave an email and we'll write as we lock things in: the shuttle, the formal invitation, the parts we haven't figured out. Tell us the one song that will get you on the dance floor while you're here."}</p>
   </div>
   <Card variant="feature" style={{maxWidth:760,margin:'var(--space-7) auto 0',padding:0,overflow:'hidden'}}>
    <StripeRule height={14}/>

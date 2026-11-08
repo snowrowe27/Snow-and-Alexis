@@ -5,10 +5,10 @@ const QA=[
  ['HOW DO I GET AROUND?',"Rideshare is easy and everywhere in Miami, so take one. You're going to want a drink, and nobody should be finding their car at midnight."],
  ["WHAT'S THE WEATHER LIKE IN APRIL?",'Sunny, mid 80s, breezy by dinner. Perfect, basically.']];
 const BEACH=[
- ['LOEWS MIAMI BEACH HOTEL','sky','the splurge','South Beach · right on the sand','Big, polished and freshly renovated, directly on the beach and walkable to Lincoln Road. The best-reviewed of the splurges, and our pick if you want the full resort.','https://www.loewshotels.com/miami-beach'],
- ['FONTAINEBLEAU MIAMI BEACH','garden','the icon','Mid-Beach · LIV downstairs','The iconic one. Pools for days, and LIV is literally in the building when the night refuses to end. Pricey and a little fee-happy, but you came to Miami.','https://www.fontainebleau.com/'],
- ['FREEHAND MIAMI','sky','the fun one','South Beach · home of Broken Shaker','Leafy, laid-back and effortlessly cool, and the Broken Shaker in the courtyard is one of the best bars in the country. Big personality, great value.','https://freehandhotels.com/miami/'],
- ['THE TONY HOTEL SOUTH BEACH','garden','budget-friendly','South Beach · Art Deco charm','The wallet-friendly pick: a cute Art Deco boutique with a rooftop pool, steps from the beach, and it reviews great for the price.','https://www.thetonyhotel.com/']];
+ ['LOEWS MIAMI BEACH HOTEL','sky','the splurge','Miami Beach · South Beach, on the sand','Big, polished and freshly renovated, directly on the beach and walkable to Lincoln Road. The best-reviewed of the splurges, and our pick if you want the full resort.','https://www.loewshotels.com/miami-beach'],
+ ['FONTAINEBLEAU MIAMI BEACH','garden','the icon','Miami Beach · Mid-Beach, LIV downstairs','The iconic one. Pools for days, and LIV is literally in the building when the night refuses to end. Pricey and a little fee-happy, but you came to Miami.','https://www.fontainebleau.com/'],
+ ['FREEHAND MIAMI','sky','the fun one','Miami Beach · South Beach, home of Broken Shaker','Leafy, laid-back and effortlessly cool, and the Broken Shaker in the courtyard is one of the best bars in the country. Big personality, great value.','https://freehandhotels.com/miami/'],
+ ['THE TONY HOTEL SOUTH BEACH','garden','budget-friendly','Miami Beach · South Beach, Art Deco charm','The wallet-friendly pick: a cute Art Deco boutique with a rooftop pool, steps from the beach, and it reviews great for the price.','https://www.thetonyhotel.com/']];
 const HOTELS=[
  ['MAYFAIR HOUSE HOTEL & GARDEN','garden','our pick','Our favorite for its boutique feel, beautiful design, and central Grove location.','https://www.mayfairhousemiami.com/'],
  ['COURTYARD BY MARRIOTT COCONUT GROVE','sky','the easy one','Kinder on the wallet and still walkable to the Grove restaurants and shops.','https://www.marriott.com/en-us/hotels/miagv-courtyard-miami-coconut-grove/overview/']];
@@ -27,11 +27,11 @@ function Faq(){
    <Card>
     <div style={{fontFamily:'var(--font-display)',fontSize:'1.375rem',color:'var(--villa-green)'}}>WHERE SHOULD WE STAY?</div>
     <div style={{marginTop:'var(--space-5)',background:'var(--bougain-200)',border:'1.5px solid var(--bougain-400)',borderRadius:'var(--radius-md)',padding:'var(--space-5) var(--space-6)'}}>
-     <span style={{display:'inline-block',fontFamily:'var(--font-ui)',fontSize:12,fontWeight:600,letterSpacing:'.16em',textTransform:'uppercase',color:'var(--bougain-600)',background:'var(--cream-50)',border:'1px solid var(--bougain-400)',borderRadius:'var(--radius-pill)',padding:'5px 14px'}}>Where we'd stay</span>
+     <span style={{display:'inline-block',fontFamily:'var(--font-ui)',fontSize:12,fontWeight:600,letterSpacing:'.16em',textTransform:'uppercase',color:'var(--bougain-600)',background:'var(--cream-50)',border:'1px solid var(--bougain-400)',borderRadius:'var(--radius-pill)',padding:'5px 14px'}}>Option 1 · Where we'd stay</span>
      <div style={{fontFamily:'var(--font-display)',fontSize:'1.75rem',color:'var(--villa-green)',marginTop:12,lineHeight:1.1}}>MIAMI BEACH</div>
-     <p style={{fontSize:17,color:'var(--ink-600)',margin:'10px 0 0'}}>For the true Miami experience, stay on the beach. We're working on a room block now, and if you go this route, we're planning a shuttle to the villa from our block hotel. The beach hotels are all close by, so getting to the shuttle will be easy wherever you stay.</p>
+     <p style={{fontSize:17,color:'var(--ink-600)',margin:'10px 0 0'}}>For the true Miami experience, stay on the beach. We're planning a shuttle from Miami Beach to the villa, and the beach hotels are all close together, so getting to it will be easy wherever you stay.</p>
     </div>
-    <p style={{fontSize:17,color:'var(--ink-600)',margin:'var(--space-6) 0 0',fontWeight:600}}>A few we'd book, from blow-it-out to budget. Honestly though, Miami Beach has a thousand great hotels, so don't feel boxed in:</p>
+    <p style={{fontSize:17,color:'var(--ink-600)',margin:'var(--space-6) 0 0',fontWeight:600}}>A few Miami Beach hotels we'd book, from splurge to wallet-friendly. Honestly though, there are a thousand great ones, so don't feel boxed in:</p>
     <div className="ds-grid2" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'var(--space-4)',marginTop:'var(--space-4)'}}>
      {BEACH.map(([n,tone,tag,loc,desc,url])=>
       <div key={n} style={{border:'var(--border-ink)',borderRadius:'var(--radius-md)',padding:'var(--space-5)',display:'flex',flexDirection:'column',gap:8,alignItems:'flex-start'}}>
@@ -42,13 +42,17 @@ function Faq(){
        <Button size="sm" variant="outline" href={url} target="_blank" rel="noopener" style={{marginTop:'auto'}}>HAVE A LOOK</Button>
       </div>)}
     </div>
-    <p style={{fontSize:17,color:'var(--ink-600)',margin:'var(--space-6) 0 0',fontWeight:600}}>Or, if you'd like to stay near the venue, here are two great options:</p>
+    <div style={{marginTop:'var(--space-7)',background:'var(--sage-100)',border:'1.5px solid var(--sage-300)',borderRadius:'var(--radius-md)',padding:'var(--space-5) var(--space-6)'}}>
+     <span style={{display:'inline-block',fontFamily:'var(--font-ui)',fontSize:12,fontWeight:600,letterSpacing:'.16em',textTransform:'uppercase',color:'var(--sage-600)',background:'var(--cream-50)',border:'1px solid var(--sage-300)',borderRadius:'var(--radius-pill)',padding:'5px 14px'}}>Option 2 · Near the venue</span>
+     <div style={{fontFamily:'var(--font-display)',fontSize:'1.75rem',color:'var(--villa-green)',marginTop:12,lineHeight:1.1}}>COCONUT GROVE</div>
+     <p style={{fontSize:17,color:'var(--ink-600)',margin:'10px 0 0'}}>Prefer to be close to the party? The Grove is leafy and walkable, and these two are about 5 minutes from Villa Woodbine.</p>
+    </div>
     <div className="ds-grid2" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'var(--space-4)',marginTop:'var(--space-4)'}}>
      {HOTELS.map(([n,tone,tag,desc,url])=>
       <div key={n} style={{border:'var(--border-ink)',borderRadius:'var(--radius-md)',padding:'var(--space-5)',display:'flex',flexDirection:'column',gap:8,alignItems:'flex-start'}}>
        <Badge tone={tone}>{tag}</Badge>
        <div style={{fontFamily:'var(--font-display)',fontSize:'1.1875rem',color:'var(--villa-green)',marginTop:4}}>{n}</div>
-       <div style={{fontFamily:'var(--font-hand)',fontWeight:600,fontSize:'1.25rem',color:'var(--olive-600)',lineHeight:1.2}}>5 minutes from Villa Woodbine</div>
+       <div style={{fontFamily:'var(--font-hand)',fontWeight:600,fontSize:'1.25rem',color:'var(--olive-600)',lineHeight:1.2}}>Coconut Grove · 5 min from the villa</div>
        <p style={{fontSize:16,color:'var(--ink-600)',margin:'2px 0 12px'}}>{desc}</p>
        <Button size="sm" variant="outline" href={url} target="_blank" rel="noopener" style={{marginTop:'auto'}}>HAVE A LOOK</Button>
       </div>)}
