@@ -4,7 +4,7 @@ const StripeSurfaceDay=NSDay.StripeSurface||function({tone,direction,scale,round
  return React.createElement(as,{style:{backgroundImage:F[tone]||F.sage,backgroundSize:'68px 68px',position:'relative',...(rounded?{borderRadius:'var(--radius-lg)',overflow:'hidden'}:{}),...style},...p},children);
 };
 const { Badge, Card, Illustration } = NSDay;
-const RUN=[['5:30','Ceremony','cupid'],['6:00','Cocktail hour','champagne-tower'],['7:00','Dinner','banquet-table'],['8:45','Dancing!','disco-ball'],['11:00','Afterparty??','record-player']];
+const RUN=[['5:30','Ceremony','cupid'],['6:00','Cocktail hour','champagne-tower'],['7:00','Dinner','banquet-table'],['8:45','Dancing!','disco-ball'],['11:00','After party at LIV','record-player']];
 function TheDay(){
  return <React.Fragment>
   <Section id="day" tone="cream" style={{paddingTop:'var(--space-6)'}}>
@@ -13,16 +13,17 @@ function TheDay(){
     <ScriptHeading script="The day" eyebrow="Friday · April 23, 2027" title="VILLA WOODBINE, COCONUT GROVE"/>
     <p style={{fontSize:'var(--text-lede)',marginTop:20}}>A garden wedding at a 1930s Mediterranean villa, a block from Biscayne Bay. Ceremony and reception are both on site, so settle in for the night.</p>
    </div>
-   <style>{".placeCard{display:block;height:100%;transition:transform .18s ease}.placeCard:hover{transform:translateY(-3px)}.placeCard:hover .placeLink{text-decoration:underline;text-underline-offset:4px}"}</style>
+   <style>{".placeCard{display:block;height:100%;transition:transform .18s ease}.placeCard:hover{transform:translateY(-3px)}.placeCard:hover .placeLink{text-decoration:underline;text-underline-offset:4px}.placeCard:hover .placeBtn{filter:brightness(1.08)}"}</style>
    <div className="ds-grid3" style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'var(--space-5)',marginTop:'var(--space-7)'}}>
     {[['THE PLACE','garden','Villa Woodbine','Coconut Grove, Miami','https://www.villa-woodbine.com/','Visit the venue'],
       ['THE TIMING','butter','Doors at 5:00 pm','Ceremony at 5:30 sharp'],
-      ['THE DRESS CODE','pink','Garden party formal','Be as extra as you want','https://pin.it/4PigzV81V','See our inspo']].map(([k,tone,t,script,url,cue])=>{
+      ['THE DRESS CODE','pink','Garden party formal','Be as extra as you want','https://pin.it/4PigzV81V','Outfit inspo']].map(([k,tone,t,script,url,cue])=>{
      const body=<Card style={{textAlign:'center',height:'100%'}}>
       <Badge tone={tone}>{k}</Badge>
       <div className={url?'placeLink':undefined} style={{fontFamily:'var(--font-display)',fontSize:'1.625rem',marginTop:12,color:'var(--villa-green)',lineHeight:1.15,minHeight:'2.3em',display:'flex',alignItems:'center',justifyContent:'center'}}>{t.toUpperCase()}</div>
       <div style={{fontFamily:'var(--font-script)',fontSize:26,color:'var(--bougainvillea)',lineHeight:1.2,marginTop:6,minHeight:'2.4em'}}>{script}</div>
-      {url&&<div style={{fontFamily:'var(--font-ui)',fontSize:12,letterSpacing:'.14em',textTransform:'uppercase',color:'var(--olive)',marginTop:'var(--space-4)'}}>{cue} <span aria-hidden="true">↗</span></div>}
+      {url&&<span className="placeBtn" style={{display:'inline-block',fontFamily:'var(--font-ui)',fontSize:12,fontWeight:600,letterSpacing:'.08em',textTransform:'uppercase',whiteSpace:'nowrap',marginTop:'var(--space-4)',padding:'10px 16px',borderRadius:'var(--radius-pill)',
+        ...(k==='THE DRESS CODE'?{background:'var(--bougainvillea)',color:'var(--cream-50)',border:'1.5px solid var(--bougainvillea)'}:{background:'transparent',color:'var(--villa-green)',border:'1.5px solid var(--villa-green)'})}}>{cue} <span aria-hidden="true">↗</span></span>}
      </Card>;
      return url
        ? <a key={k} className="placeCard" href={url} target="_blank" rel="noopener" style={{textDecoration:'none',color:'inherit'}}>{body}</a>
@@ -42,7 +43,7 @@ function TheDay(){
        <span aria-hidden="true" className="ds-runicon" style={{justifySelf:'end',width:72,height:72,display:'block',transform:'rotate(-3deg)',background:'var(--villa-green)',WebkitMaskImage:'url('+ILL+'/'+ill+'.png)',maskImage:'url('+ILL+'/'+ill+'.png)',WebkitMaskRepeat:'no-repeat',maskRepeat:'no-repeat',WebkitMaskPosition:'center',maskPosition:'center',WebkitMaskSize:'contain',maskSize:'contain'}}/>
       </div>)}
     </div>
-    <div style={{marginTop:30,background:'var(--cream-50)',border:'1.5px solid var(--miami-orange)',borderRadius:'var(--radius-lg)',padding:'var(--space-5) var(--space-6)'}}><p style={{fontFamily:'var(--font-hand)',fontWeight:600,fontSize:'clamp(1.875rem,3.2vw,2.5rem)',lineHeight:1.25,color:'var(--orange-600)',textAlign:'center',margin:0}}>Villa Woodbine kicks us out at 11, rude. If you're still standing and want to keep the party going, stick with us. We know a place. That's all we're saying.</p></div>
+    <div style={{marginTop:30,background:'var(--cream-50)',border:'1.5px solid var(--miami-orange)',borderRadius:'var(--radius-lg)',padding:'var(--space-5) var(--space-6)'}}><p style={{fontFamily:'var(--font-hand)',fontWeight:600,fontSize:'clamp(1.875rem,3.2vw,2.5rem)',lineHeight:1.25,color:'var(--orange-600)',textAlign:'center',margin:0}}>Villa Woodbine kicks us out at 11, rude. So the party moves to LIV at the Fontainebleau Miami Beach. Totally optional, 21+, and open to anyone who wants to keep dancing.</p></div>
    </div>
   </StripeSurfaceDay>
  </React.Fragment>;

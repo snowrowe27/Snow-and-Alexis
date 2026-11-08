@@ -15,8 +15,8 @@ function Hero({go}){
   </div>
   <div style={{fontFamily:'var(--font-display)',fontSize:'clamp(1rem,1.8vw,1.375rem)',letterSpacing:'var(--tracking-caps)',marginTop:'var(--space-6)',color:'var(--olive)'}}>FRIDAY · APRIL 23, 2027 <span style={{color:'var(--butter-600)'}}>·</span> VILLA WOODBINE <span style={{color:'var(--butter-600)'}}>·</span> COCONUT GROVE, MIAMI</div>
   <div style={{display:'flex',gap:14,justifyContent:'center',marginTop:'var(--space-5)',flexWrap:'wrap'}}>
-   <Button variant="primary" size="lg" onClick={()=>go('day')}>WHAT WE KNOW SO FAR</Button>
-   <Button variant="outline" size="lg" onClick={()=>go('keep')}>GET UPDATES</Button>
+   <Button variant="primary" size="lg" onClick={()=>go('keep')}>RSVP</Button>
+   <Button variant="outline" size="lg" onClick={()=>go('day')}>THE DETAILS</Button>
   </div>
  </div>;
 }

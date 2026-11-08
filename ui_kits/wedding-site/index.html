@@ -27,24 +27,40 @@
 <script type="text/babel" src="Footer.jsx"></script>
 <script type="text/babel">
 const { NavBar, Button } = window.LexiSnowDesignSystem_f12512;
-const NAV=[{value:'day',label:'THE DAY'},{value:'keep',label:'GET UPDATES'},{value:'faq',label:'FAQ'}];
+const NAV=[{value:'keep',label:'RSVP'},{value:'day',label:'THE DAY'},{value:'stay',label:'STAY'},{value:'faq',label:'FAQ'}];
+// Links like lexiandsnow.com/#rsvp (e.g. the QR code on the invitation) jump
+// straight to a section. '#rsvp' is a friendly alias for the form's '#keep'.
+const HASH_ALIAS={rsvp:'keep'};
 function App(){
- const [active,setActive]=React.useState('day');
- const go=(id)=>{const el=document.getElementById(id);if(el)window.scrollTo({top:el.offsetTop-64,behavior:'smooth'});};
+ const [active,setActive]=React.useState('');
+ const go=(id,smooth=true)=>{const el=document.getElementById(id);if(el)window.scrollTo({top:el.offsetTop-64,behavior:smooth?'smooth':'auto'});};
  React.useEffect(()=>{
-  const ids=['day','keep','faq'];
-  const onScroll=()=>{let cur='day';for(const id of ids){const el=document.getElementById(id);if(el&&el.offsetTop-120<=window.scrollY)cur=id;}setActive(cur);};
+  const ids=['keep','day','stay','faq'];
+  const onScroll=()=>{let cur='';for(const id of ids){const el=document.getElementById(id);if(el&&el.offsetTop-120<=window.scrollY)cur=id;}setActive(cur);};
   window.addEventListener('scroll',onScroll,{passive:true});onScroll();
   return()=>window.removeEventListener('scroll',onScroll);
  },[]);
+ React.useEffect(()=>{
+  // The browser's own #hash jump fires before React has drawn the page, so it
+  // misses. Jump once the page is drawn, then again after fonts/images settle.
+  const h=decodeURIComponent(location.hash.slice(1)).toLowerCase();
+  if(!h) return;
+  const id=HASH_ALIAS[h]||h;
+  const jump=()=>go(id,false);
+  const t=setTimeout(jump,50);
+  window.addEventListener('load',jump,{once:true});
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(jump);
+  return()=>{clearTimeout(t);window.removeEventListener('load',jump);};
+ },[]);
  return <React.Fragment>
   <NavBar brand="ALEXIS & MATTHEW" script="4 · 23 · 27" items={NAV} active={active} onNavigate={go}
-    action={<Button size="sm" onClick={()=>go('keep')}>GET UPDATES</Button>}/>
+    action={<Button size="sm" onClick={()=>go('keep')}>RSVP</Button>}/>
   <Hero go={go}/>
-  <TheDay/>
-  <Photos/>
   <KeepInTouch/>
+  <TheDay/>
+  <WhereToStay/>
   <Faq/>
+  <Photos/>
   <StoryCta/>
   <SiteFooter go={go}/>
  </React.Fragment>;
