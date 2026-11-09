@@ -2,7 +2,7 @@ const { Button, Card, Badge, Illustration } = window.LexiSnowDesignSystem_f12512
 const QA=[
  ['HOW DO I RSVP?','Right here on the site, by February 1, 2027. Use the RSVP form above to let us know if you can make it, who\'s coming and what they\'d like for dinner.'],
  ['WHAT SHOULD I WEAR?',<span>Garden party formal: bold, bright colors and be as extra as you want. It's a garden, so maybe skip the stilettos. <a href="https://pin.it/4PigzV81V" target="_blank" rel="noopener" style={{color:'var(--bougain-600)',fontWeight:600,textUnderlineOffset:3}}>See our outfit inspo board ↗</a></span>],
- ['HOW DO I GET THERE?','Miami International (MIA) is about 20 minutes from the Grove. Fort Lauderdale (FLL) is often cheaper and roughly an hour out, worth a look if you’re coming from the Northeast.'],
+ ['HOW DO I GET THERE?','Fly into Miami International (MIA). It’s about 20 minutes to Miami Beach or Coconut Grove. Fort Lauderdale (FLL) is often cheaper and about 45 minutes to an hour away.'],
  ['HOW DO I GET AROUND?',"Rideshare is easy and everywhere in Miami, so take one. You're going to want a drink, and nobody should be finding their car at midnight."],
  ["WHAT'S THE WEATHER LIKE IN APRIL?",'Sunny, mid 80s, breezy by dinner. Perfect, basically.']];
 const BEACH=[
