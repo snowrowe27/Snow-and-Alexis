@@ -201,12 +201,12 @@ function KeepInTouch(){
   <div style={{display:'flex',justifyContent:'center',marginTop:'var(--space-6)'}}>
    <Illustration name="couple-on-cake" basePath={ILL} size={140} rotate={0}/>
   </div>
-  <Dialog open={open} title={RSVP_OPEN?(attending?"YOU'RE ON THE LIST":"THANK YOU"):"YOU'RE ON THE LIST"} script={RSVP_OPEN?(attending?"see you on the dance floor":"we'll miss you"):"see you in the garden"} onClose={()=>setOpen(false)}
+  <Dialog open={open} title={RSVP_OPEN?(attending?"SEE YOU IN MIAMI!":"WE'LL MISS YOU"):"YOU'RE ON THE LIST"} script={RSVP_OPEN?(attending?"we can't wait to celebrate":"we'll raise a glass to you"):"see you in the garden"} onClose={()=>setOpen(false)}
    footer={<Button variant="butter" onClick={()=>setOpen(false)}>LOVELY</Button>}>
    {RSVP_OPEN
      ? (attending
-         ?<span>Thanks, {name||'friend'}. Your RSVP is saved{song?', and your song is going straight on the playlist':''}. We'll be in touch as we lock things in.</span>
-         :<span>Thanks for letting us know, {name||'friend'}. We'll miss you, but we're grateful you told us.</span>)
+         ?<span>Thanks, {name.trim()||'friend'}! Your RSVP is saved, dinner's ordered and the champagne's on ice.</span>
+         :<span>Thanks for letting us know, {name.trim()||'friend'}. We'll be toasting to you from Miami.</span>)
      : <span>Thanks, {name||'friend'}. We'll write when the invitation goes out{song?', and your song is going straight on the playlist':''}.</span>}
   </Dialog>
  </div></StripeSurfaceKeep>;
