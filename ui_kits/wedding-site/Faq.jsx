@@ -8,8 +8,8 @@ const QA=[
 const BEACH=[
  ['LOEWS MIAMI BEACH HOTEL','sky','the splurge','Miami Beach · South Beach, on the sand','Big, polished and freshly renovated, right on the beach and a short walk to Lincoln Road.','https://www.loewshotels.com/miami-beach'],
  ['FONTAINEBLEAU MIAMI BEACH','garden','the icon','Miami Beach · Mid-Beach, LIV downstairs','The classic Miami Beach resort, with pools for days and LIV, home of our after party, right in the building.','https://www.fontainebleau.com/'],
- ['FREEHAND MIAMI','sky','the fun one','Miami Beach · South Beach, home of Broken Shaker','Leafy and laid-back, with the Broken Shaker, one of the best bars in the country, right in the courtyard. Big personality, great value.','https://freehandhotels.com/miami/'],
- ['THE TONY HOTEL SOUTH BEACH','garden','budget-friendly','Miami Beach · South Beach, Art Deco charm','A cute Art Deco boutique hotel with a rooftop pool, steps from the beach. Great reviews for the price.','https://www.thetonyhotel.com/']];
+ ['GRAND BEACH HOTEL','pink','on the sand','Miami Beach · Mid-Beach, pink umbrellas on the sand','Bright, roomy and right on the beach, with three pools and rows of those famous pink umbrellas. A great middle ground between splurge and budget.','https://www.grandbeachhotel.com/miami-beach'],
+ ['FREEHAND MIAMI','butter','fun + budget-friendly','Miami Beach · Mid-Beach, home of Broken Shaker','Leafy and laid-back, with the Broken Shaker, one of the best bars in the country, right in the courtyard. Big personality, great value. Book a king for two, or grab a bunk room and split it with friends.','https://freehandhotels.com/miami/']];
 const HOTELS=[
  ['MAYFAIR HOUSE HOTEL & GARDEN','garden','our pick','Our favorite for its boutique feel, beautiful design, and central Grove location.','https://www.mayfairhousemiami.com/'],
  ['COURTYARD BY MARRIOTT COCONUT GROVE','sky','the easy one','A more affordable option, still walkable to the Grove restaurants and shops.','https://www.marriott.com/en-us/hotels/miagv-courtyard-miami-coconut-grove/overview/']];
@@ -24,7 +24,7 @@ function WhereToStay(){
      <div style={{fontFamily:'var(--font-display)',fontSize:'1.75rem',color:'var(--villa-green)',marginTop:12,lineHeight:1.1}}>MIAMI BEACH</div>
      <p style={{fontSize:17,color:'var(--ink-600)',margin:'10px 0 0'}}>For the true Miami experience, stay on the beach. We're planning a shuttle from Miami Beach to the villa, and the beach hotels are all close together, so getting to it will be easy wherever you stay.</p>
     </div>
-    <p style={{fontSize:17,color:'var(--ink-600)',margin:'var(--space-6) 0 0',fontWeight:600}}>A few Miami Beach hotels we'd book, from splurge to wallet-friendly. Honestly though, there are a thousand great ones, so don't feel boxed in:</p>
+    <p style={{fontSize:17,color:'var(--ink-600)',margin:'var(--space-6) 0 0',fontWeight:600}}>A few Miami Beach hotels we'd book, from splurge to wallet-friendly. Honestly though, there are a thousand great ones, so don't feel boxed in. Miami fills up fast in April, so book early!</p>
     <div className="ds-grid2" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'var(--space-4)',marginTop:'var(--space-4)'}}>
      {BEACH.map(([n,tone,tag,loc,desc,url])=>
       <div key={n} style={{border:'var(--border-ink)',borderRadius:'var(--radius-md)',padding:'var(--space-5)',display:'flex',flexDirection:'column',gap:8,alignItems:'flex-start'}}>
