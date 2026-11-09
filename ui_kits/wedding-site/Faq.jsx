@@ -1,7 +1,6 @@
 const { Button, Card, Badge, Illustration } = window.LexiSnowDesignSystem_f12512;
 const QA=[
  ['HOW DO I RSVP?','Right here on the site, by February 1, 2027. Use the RSVP form above to let us know if you can make it, who\'s coming and what they\'d like for dinner.'],
- ['CAN I BRING A PLUS-ONE OR MY KIDS?',"We'd love to celebrate with everyone, but we're only able to host the guests named on your invitation. If you have questions, just text us."],
  ['WHAT SHOULD I WEAR?',<span>Garden party formal, and be as extra as you want. Think florals, color and fun shoes (it's a garden, so maybe skip the stilettos). <a href="https://pin.it/4PigzV81V" target="_blank" rel="noopener" style={{color:'var(--bougain-600)',fontWeight:600,textUnderlineOffset:3}}>See our outfit inspo board ↗</a></span>],
  ['HOW DO I GET THERE?','Miami International (MIA) is about 20 minutes from the Grove. Fort Lauderdale (FLL) is often cheaper and roughly an hour out, worth a look if you’re coming from the Northeast.'],
  ['HOW DO I GET AROUND?',"Rideshare is easy and everywhere in Miami, so take one. You're going to want a drink, and nobody should be finding their car at midnight."],

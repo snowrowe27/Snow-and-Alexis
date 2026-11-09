@@ -139,7 +139,7 @@ function KeepInTouch(){
      </Field>}
 
     {RSVP_OPEN && attending===true &&
-     <Field label="How many in your party?" htmlFor="kg" hint="Including yourself. Please only include guests named on your invitation.">
+     <Field label="How many in your party?" htmlFor="kg" hint="Including yourself. Bringing a plus-one? Count them here and pick their dinner below.">
       <Select id="kg" value={guests} onChange={e=>{
           const n=parseInt(e.target.value,10)||1;
           setGuests(e.target.value);
