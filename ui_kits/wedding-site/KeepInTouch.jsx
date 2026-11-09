@@ -139,13 +139,13 @@ function KeepInTouch(){
      </Field>}
 
     {RSVP_OPEN && attending===true &&
-     <Field label="How many in your party?" htmlFor="kg" hint="Including yourself.">
+     <Field label="How many in your party?" htmlFor="kg" hint="Including yourself. Please only include guests named on your invitation.">
       <Select id="kg" value={guests} onChange={e=>{
           const n=parseInt(e.target.value,10)||1;
           setGuests(e.target.value);
           setParty(p=>Array.from({length:n},(_,i)=>p[i]||{name:'',meal:''}));
         }}
-        options={[1,2,3,4,5,6,7,8].map(n=>({value:String(n),label:String(n)}))}/>
+        options={[1,2,3,4].map(n=>({value:String(n),label:String(n)}))}/>
      </Field>}
 
     {RSVP_OPEN && attending===true &&
